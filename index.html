@@ -3,38 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Draw</title>
   </head>
   <body>
-    <div id="box-container" class="box-container"></div>
-    <div class="draw-buttons">
-      <button id="btn-reset">Reset</button>
-      <button id="btn-save">Save</button>
-      <button id="btn-load">Load</button>
-      <button id="btn-getPixels">GetPixels</button>
-      <h1 id="toast"></h1>
+    <div class="wrapper">
+      <div class="head">
+        <h1>pixel-draw</h1>
+        <i id="clear-btn" class="fa-solid fa-broom fa-2x" title="Clear"></i>
+        <i id="save-btn" class="fa-solid fa-floppy-disk fa-2x" title="Save"></i>
+        <i id="load-btn" class="fa-regular fa-floppy-disk fa-2x" title="Load"></i>
+        <i id="getPixels-btn" class="fa-solid fa-download fa-2x" title="Get Pixels"></i>
+        <i id="drawPixels-btn" class="fa-solid fa-pencil fa-2x" title="Draw Pixels"></i>
+        <i id="upload-btn" class="fa-solid fa-upload fa-2x" title="Upload"></i>
+        <input type="file" id="fileInput" accept="image/*" hidden />
+        <i id="help-btn" class="fa-solid fa-circle-question fa-2x" title="Help"></i>
+      </div>
+      <div id="canvas"></div>
+      <div class="textarea">
+        <textarea id="input" autocomplete="off"></textarea>
+      </div>
     </div>
-    <div class="textarea">
-      <textarea id="pixelBar" class="pixelBar"></textarea>
-    </div>
-    <div class="textarea-buttons">
-      <button id="btn-drawPixels">DrawPixels</button>
-      <button id="btn-clearText">Clear</button>
-    </div>
-    <div class="instructions">
-      <h3 class="text">Instructions</h3>
-      <ul class="'text">
-        <li>Mouseover to draw</li>
-        <li>Hold shift to erase</li>
-        <li>Save - saves current design to web cache</li>
-        <li>Load - loads in design from web cache</li>
-        <li>GetPixels - returns pixel numbers for current design</li>
-        <li>DrawPixels - draws pixel numbers from the textbox</li>
-        <li>Try 'steve' or 'phil' in the textbox for a surprise</li>
-      </ul>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="module" src="scripts.js"></script>
   </body>
 </html>
