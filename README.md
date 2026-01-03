@@ -6,27 +6,24 @@ Small, single-page pixel art tool built with vanilla HTML/CSS/JS.
 
 ## Features
 
-- 25x25 pixel grid drawing
-- Click/drag to draw, Command-click/drag to erase
-- Save/load to localStorage
-- Export selected pixel IDs to a text box
-- Paste pixel IDs to redraw a pattern
-- Upload an image to auto-pixelate it into the grid
+- 25x25 pixel canvas with click-and-drag drawing
+- Eraser toggle via Command key
+- Save and load drawings using localStorage
+- Export and import pixel IDs for reproducible patterns
+- Image upload with automatic pixelation to the grid
 
 ## Getting started
 
 1. Open `index.html` in a browser.
 2. Draw on the grid or upload an image to pixelate.
-3. Use the toolbar icons for save/load/export.
+3. Use the toolbar icons to save, load, and export.
 
-## Controls
+## Toolbar reference
 
-- Draw: click or click-drag
-- Erase: hold Command while clicking/dragging
 - Clear: broom icon
 - Save: solid disk icon
 - Load: outlined disk icon
-- Export pixel IDs: download icon
+- Export IDs: download icon
 - Draw from IDs: pencil icon (or paste into the textarea)
 - Upload image: upload icon
 - Help: question mark icon
