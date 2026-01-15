@@ -9,10 +9,13 @@ const getPixelsBtn = document.getElementById("getPixels-btn");
 const uploadBtn = document.getElementById("upload-btn");
 const fileInput = document.getElementById("fileInput");
 const drawPixelsBtn = document.getElementById("drawPixels-btn");
+const colorSlider = document.getElementById("colorSlider");
 
 const BOX = 25;
 const TOTAL_PIXELS = BOX * BOX;
 // const PIXEL_WIDTH = 31;
+
+let currentColor = "black";
 
 clearBtn?.addEventListener("click", clear);
 saveBtn?.addEventListener("click", save);
@@ -23,6 +26,7 @@ helpBtn?.addEventListener("click", toggleHelp);
 inputEl?.addEventListener("input", drawPixelsFromInput);
 uploadBtn?.addEventListener("click", () => fileInput.click());
 fileInput?.addEventListener("change", getImageFromFile);
+colorSlider?.addEventListener("input", updateColor);
 
 drawPixelGrid();
 
@@ -46,8 +50,8 @@ function managePenEvent(event, pixel) {
 }
 
 function drawPixel(pixel) {
-  pixel.style.backgroundColor = "";
-  pixel.classList.add("pixel-color");
+  pixel.style.backgroundColor = currentColor;
+  // pixel.classList.add("pixel-color");
 }
 
 function erasePixel(pixel) {
@@ -141,6 +145,7 @@ function save() {
 }
 
 // Load drawing from web storage
+//TODO: save and load pixel colors
 function load() {
   clear();
 
@@ -224,6 +229,19 @@ function toggleHelp() {
   `;
 
   setInput(text);
+}
+
+/*
+Black: rgb(0, 0, 0) (no light).
+White: rgb(255, 255, 255) (all light).
+Red: rgb(255, 0, 0) (full red, no green/blue).
+Yellow: rgb(255, 255, 0) (full red and green, no blue).
+*/
+
+function updateColor() {
+  let c = parseInt(colorSlider.value);
+  currentColor = `hsl(${c},100%,50%)`;
+  colorSlider.style.backgroundColor = currentColor;
 }
 
 // Set text box text
