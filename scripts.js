@@ -241,6 +241,10 @@ Yellow: rgb(255, 255, 0) (full red and green, no blue).
 function updateColor() {
   let c = parseInt(colorSlider.value);
   currentColor = `hsl(${c},100%,50%)`;
+
+  if (c == 0) currentColor = "black";
+  if (c == 360) currentColor = "white";
+
   colorSlider.style.backgroundColor = currentColor;
 }
 
